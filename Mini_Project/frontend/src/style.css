@@ -1,0 +1,934 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* ==========================================
+   1. GLOBAL STYLES
+========================================== */
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #22263a;
+  background: #f5f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+/* ==========================================
+   2. DASHBOARD LAYOUT
+========================================== */
+
+.dashboard-shell {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.topbar {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e8f0;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  align-items: start;
+  gap: 18px;
+}
+
+/* ==========================================
+   3. BRAND AND HEADER
+========================================== */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #25283b;
+  text-decoration: none;
+  font: 800 19px Manrope, sans-serif;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: white;
+  background: #6558e8;
+  font-size: 15px;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-greeting {
+  color: #697087;
+  font-size: 13px;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  padding: 40px 0 25px;
+}
+
+.welcome h1 {
+  margin: 0 0 8px;
+  font-size: clamp(25px, 4vw, 34px);
+  letter-spacing: -1.2px;
+}
+
+.welcome .muted {
+  margin: 0;
+}
+
+.date-chip {
+  padding: 10px 13px;
+  border: 1px solid #e5e6f0;
+  border-radius: 10px;
+  color: #777d91;
+  background: white;
+  font-size: 11px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #8b91a4;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Manrope, sans-serif;
+}
+
+.muted {
+  color: #7e8497;
+  font-size: 13px;
+}
+
+/* ==========================================
+   4. STATISTICS CARDS
+========================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  padding: 17px 20px;
+  border: 1px solid #e8eaf1;
+  border-radius: 13px;
+  background: white;
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #858b9e;
+  font-size: 11px;
+}
+
+.stat-card strong {
+  font: 800 27px Manrope, sans-serif;
+}
+
+/* ==========================================
+   5. PANELS AND HEADINGS
+========================================== */
+
+.panel {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid #e8eaf1;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 28px rgba(35, 40, 70, 0.03);
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.panel-heading .eyebrow {
+  margin-bottom: 6px;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.panel-number {
+  color: #c7c9d6;
+  font: 800 24px Manrope, sans-serif;
+}
+
+.task-count {
+  padding: 7px 10px;
+  border-radius: 20px;
+  color: #6558e8;
+  background: #f0efff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   6. TASK AND AUTHENTICATION FORMS
+========================================== */
+
+.task-form,
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.task-form label,
+.auth-form label {
+  display: grid;
+  gap: 7px;
+  color: #555c71;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select,
+.auth-form input,
+.search-input {
+  width: 100%;
+  padding: 11px 12px;
+  outline: none;
+  border: 1px solid #e3e6ef;
+  border-radius: 8px;
+  color: #30354a;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.task-form textarea {
+  resize: vertical;
+}
+
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus,
+.auth-form input:focus,
+.search-input:focus {
+  border-color: #8a80ef;
+  box-shadow: 0 0 0 3px rgba(101, 88, 232, 0.09);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 9px;
+}
+
+/* ==========================================
+   7. BUTTONS
+========================================== */
+
+.button {
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.button.primary {
+  color: white;
+  background: #6558e8;
+}
+
+.button.primary:hover {
+  background: #5145d0;
+}
+
+.button.outline {
+  border-color: #e1e3ec;
+  color: #62697e;
+  background: white;
+}
+
+.button.small {
+  padding: 8px 12px;
+}
+
+.button.full {
+  width: 100%;
+  padding: 12px;
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   8. SEARCH AND FILTERS
+========================================== */
+
+.search-input {
+  margin-bottom: 13px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eff0f5;
+}
+
+.filter-tab {
+  padding: 7px 11px;
+  border: 0;
+  border-radius: 7px;
+  color: #7c8295;
+  background: transparent;
+  font-size: 10px;
+}
+
+.filter-tab.active {
+  color: #5b50d6;
+  background: #f0efff;
+  font-weight: 700;
+}
+
+/* ==========================================
+   9. TASK LIST AND TASK CARDS
+========================================== */
+
+.task-list {
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+}
+
+.task-card {
+  display: flex;
+  gap: 11px;
+  padding: 13px;
+  border: 1px solid #eceef4;
+  border-radius: 11px;
+}
+
+.task-card.is-complete {
+  background: #fbfbfd;
+}
+
+.complete-toggle {
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  margin-top: 2px;
+  border: 1.5px solid #c9cbd8;
+  border-radius: 6px;
+  color: white;
+  background: white;
+  font-size: 12px;
+}
+
+.complete-toggle.checked {
+  border-color: #35a477;
+  background: #35a477;
+}
+
+.task-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.task-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+}
+
+.task-title-row h3 {
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: 12px;
+}
+
+.is-complete .task-title-row h3 {
+  color: #9a9eaa;
+  text-decoration: line-through;
+}
+
+.task-content p {
+  margin: 7px 0;
+  color: #7d8395;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.due-date {
+  color: #969bad;
+  font-size: 10px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 9px;
+}
+
+.task-actions button {
+  padding: 0;
+  border: 0;
+  color: #6258d8;
+  background: transparent;
+  font-size: 10px;
+}
+
+.task-actions .danger-link {
+  color: #c34d5c;
+}
+
+/* ==========================================
+   10. PRIORITY LABELS
+========================================== */
+
+.priority {
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 9px;
+  text-transform: capitalize;
+}
+
+.priority.low {
+  color: #27805c;
+  background: #eaf7f0;
+}
+
+.priority.medium {
+  color: #a16b19;
+  background: #fff5e4;
+}
+
+.priority.high {
+  color: #c04452;
+  background: #fff0f1;
+}
+
+/* ==========================================
+   11. EMPTY STATES AND NOTIFICATIONS
+========================================== */
+
+.empty-state {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #8a90a2;
+  text-align: center;
+}
+
+.empty-symbol {
+  margin-bottom: 8px;
+  color: #aaa4ef;
+  font-size: 30px;
+}
+
+.empty-state strong {
+  color: #53596d;
+  font-size: 12px;
+}
+
+.empty-state p {
+  margin: 7px 0 0;
+  font-size: 11px;
+}
+
+.notice {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.notice.error {
+  color: #b42332;
+  background: #fff0f1;
+}
+
+.notice.success {
+  color: #18794e;
+  background: #eaf8f0;
+}
+
+/* ==========================================
+   12. PROGRESS VISUALIZATION
+========================================== */
+
+.progress-panel {
+  margin-bottom: 18px;
+}
+
+.progress-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-heading h2 {
+  margin: 0 0 13px;
+  font-size: 17px;
+}
+
+.progress-heading > strong {
+  color: #6257df;
+  font: 800 25px Manrope, sans-serif;
+}
+
+.progress-track {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eeedf7;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6558e8, #36b58a);
+  transition: width 0.3s ease;
+}
+
+.progress-panel > .muted {
+  margin: 8px 0 0;
+  font-size: 10px;
+}
+
+/* ==========================================
+   13. TOOLBAR AND VIEW TABS
+========================================== */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sort-select {
+  max-width: 125px;
+  padding: 7px 8px;
+  border: 1px solid #e3e6ef;
+  border-radius: 7px;
+  color: #62697e;
+  background: white;
+  font-size: 10px;
+}
+
+.view-tabs {
+  display: flex;
+  gap: 5px;
+  margin-top: 13px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eff0f5;
+}
+
+.view-tabs button {
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 7px;
+  color: #7c8295;
+  background: transparent;
+  font-size: 10px;
+}
+
+.view-tabs button.selected {
+  color: #5b50d6;
+  background: #f0efff;
+  font-weight: 700;
+}
+
+/* ==========================================
+   14. KANBAN BOARD
+========================================== */
+
+.kanban-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 14px;
+}
+
+.kanban-column {
+  min-width: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f8f8fc;
+}
+
+.kanban-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.kanban-title h3 {
+  margin: 0;
+  font-size: 12px;
+}
+
+.kanban-title span {
+  padding: 3px 7px;
+  border-radius: 12px;
+  color: #666d82;
+  background: #e9eaf2;
+  font-size: 9px;
+}
+
+.kanban-column .task-list {
+  padding-top: 0;
+}
+
+.kanban-column .task-card {
+  margin-bottom: 8px;
+  padding: 9px;
+  background: white;
+}
+
+.column-empty {
+  color: #9298a9;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* ==========================================
+   15. TASK CATEGORIES
+========================================== */
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 7px 0;
+}
+
+.category {
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 9px;
+}
+
+.category.academic {
+  color: #4d5eb4;
+  background: #edf0ff;
+}
+
+.category.work {
+  color: #9a641e;
+  background: #fff4e3;
+}
+
+.category.personal {
+  color: #27805c;
+  background: #eaf7f0;
+}
+
+.category.other {
+  color: #7652a7;
+  background: #f3edff;
+}
+
+/* ==========================================
+   16. TASK DETAILS
+========================================== */
+
+.task-details {
+  margin-top: 8px;
+  color: #858b9e;
+  font-size: 10px;
+}
+
+.task-details summary {
+  cursor: pointer;
+  color: #6258d8;
+}
+
+.task-details p {
+  margin: 5px 0;
+  font-size: 10px;
+}
+
+/* ==========================================
+   17. CALENDAR VIEW
+========================================== */
+
+.calendar {
+  padding-top: 14px;
+}
+
+.calendar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #4d5368;
+  font-size: 12px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.calendar-weekday {
+  padding: 6px 0;
+  color: #8b91a4;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.calendar-day {
+  min-height: 72px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid #eceef4;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.calendar-day > strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #50566b;
+  font-size: 10px;
+}
+
+.calendar-task {
+  display: block;
+  overflow: hidden;
+  margin-top: 3px;
+  padding: 3px;
+  border-radius: 3px;
+  color: #554bc4;
+  background: #f0efff;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendar-day small {
+  color: #8b91a4;
+  font-size: 8px;
+}
+
+.calendar-note {
+  margin: 10px 0 0;
+  font-size: 10px;
+}
+
+/* ==========================================
+   18. AUTHENTICATION PAGES
+========================================== */
+
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f5f6fb;
+}
+
+.auth-card {
+  width: min(430px, 100%);
+  padding: 34px;
+  border: 1px solid #e8eaf1;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 12px 40px rgba(35, 40, 70, 0.05);
+}
+
+.auth-brand {
+  margin-bottom: 32px;
+}
+
+.auth-card > .eyebrow {
+  color: #6558e8;
+}
+
+.auth-card h1 {
+  margin: 0 0 8px;
+  font-size: 25px;
+  letter-spacing: -0.8px;
+}
+
+.auth-card > .muted {
+  margin-bottom: 23px;
+  line-height: 1.5;
+}
+
+.auth-switch {
+  margin: 20px 0 0;
+  color: #858b9e;
+  text-align: center;
+  font-size: 11px;
+}
+
+.auth-switch a {
+  color: #5f54dc;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.screen-loader {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #777e92;
+  font-size: 13px;
+}
+
+/* ==========================================
+   19. FOOTER
+========================================== */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 2px;
+  color: #969bad;
+  font-size: 10px;
+}
+
+/* ==========================================
+   20. RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 850px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .dashboard-shell {
+    width: calc(100% - 24px);
+  }
+
+  .topbar {
+    height: 68px;
+  }
+
+  .welcome {
+    align-items: start;
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
+  .stats-grid {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 13px;
+  }
+
+  .stat-card strong {
+    font-size: 23px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    gap: 8px;
+    font-size: 9px;
+  }
+
+  .user-greeting {
+    display: none;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+
+  .kanban-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .calendar-day {
+    min-height: 58px;
+    padding: 3px;
+  }
+
+  .calendar-task {
+    font-size: 7px;
+  }
+}
