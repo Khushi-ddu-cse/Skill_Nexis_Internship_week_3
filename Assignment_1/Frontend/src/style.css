@@ -1,0 +1,537 @@
+
+/* ==========================================
+   1. GOOGLE FONTS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+
+/* ==========================================
+   2. GLOBAL STYLES
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f6fa;
+    color: #202c40;
+    font-family: 'DM Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #6273e8;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* ==========================================
+   3. BUTTON STYLES
+========================================== */
+
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 9px;
+    padding: 11px 16px;
+    background: #6575e9;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.light {
+    background: #edf0f7;
+    color: #4c5b71;
+    padding: 9px 13px;
+}
+
+
+/* ==========================================
+   4. LOGO AND HEADER
+========================================== */
+
+.logo {
+    font: 800 21px Manrope;
+    color: #fff;
+}
+
+.shell header {
+    height: 72px;
+    background: #142033;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 max(calc((100% - 1050px) / 2), 24px);
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex: 1;
+}
+
+nav a {
+    color: #c4ccda;
+    font-size: 13px;
+}
+
+header span {
+    font-size: 12px;
+    color: #dce3ef;
+}
+
+
+/* ==========================================
+   5. MAIN DASHBOARD LAYOUT
+========================================== */
+
+.shell main {
+    max-width: 1000px;
+    width: calc(100% - 40px);
+    margin: 42px auto;
+    min-height: 65vh;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.intro h1,
+.shell h1 {
+    font: 800 30px Manrope;
+    margin: 7px 0;
+}
+
+.muted {
+    color: #8994a5;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   6. DASHBOARD STATISTICS
+========================================== */
+
+.stat,
+.panel,
+.task,
+.empty {
+    background: #fff;
+    border: 1px solid #e7ebf2;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 8px 25px #18243a08;
+}
+
+.stat small,
+.shell small {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    color: #7b87a0;
+    font-weight: 700;
+}
+
+.stat b {
+    display: block;
+    font: 800 24px Manrope;
+    margin-top: 8px;
+}
+
+
+/* ==========================================
+   7. TASK FORM PANEL
+========================================== */
+
+.panel {
+    margin-bottom: 28px;
+}
+
+.panel h2,
+.shell h2 {
+    font: 700 20px Manrope;
+    margin: 7px 0 18px;
+}
+
+.taskform {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.taskform label,
+.authbox label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #566276;
+}
+
+
+/* ==========================================
+   8. INPUT AND SELECT FIELDS
+========================================== */
+
+.taskform input,
+.taskform select,
+.authbox input,
+.filters input,
+.filters select,
+.drop input {
+    padding: 11px;
+    border: 1px solid #e0e5ee;
+    border-radius: 8px;
+    background: #fbfcfe;
+    outline: none;
+    font-size: 13px;
+}
+
+.taskform input:focus,
+.authbox input:focus {
+    border-color: #7886ec;
+}
+
+
+/* ==========================================
+   9. TASK FORM ACTIONS
+========================================== */
+
+.actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+}
+
+
+/* ==========================================
+   10. TASK LIST HEADING
+========================================== */
+
+.listhead {
+    margin: 30px 0 13px;
+}
+
+.listhead h2 {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   11. SEARCH AND FILTERS
+========================================== */
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.filters input {
+    flex: 1;
+}
+
+.filters select {
+    width: 165px;
+    background: white;
+}
+
+
+/* ==========================================
+   12. TASK CARDS
+========================================== */
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 9px 0;
+    padding: 15px;
+}
+
+.tasktext {
+    flex: 1;
+}
+
+.tasktext b {
+    font-size: 14px;
+}
+
+.tasktext p {
+    font-size: 12px;
+    color: #8590a0;
+    margin: 5px 0;
+}
+
+.tasktext small {
+    font-size: 10px;
+    color: #8792a3;
+    letter-spacing: 0;
+}
+
+
+/* ==========================================
+   13. TASK COMPLETION BUTTON
+========================================== */
+
+.strike {
+    text-decoration: line-through;
+    color: #9ba4b1;
+}
+
+.check {
+    width: 23px;
+    height: 23px;
+    padding: 0;
+    border-radius: 7px;
+    background: #fff;
+    border: 1px solid #cbd3df;
+    color: #fff;
+}
+
+.task:has(.strike) .check {
+    background: #6575e9;
+    border-color: #6575e9;
+}
+
+
+/* ==========================================
+   14. EMPTY TASK MESSAGE
+========================================== */
+
+.empty {
+    text-align: center;
+    color: #8994a5;
+    padding: 40px;
+}
+
+
+/* ==========================================
+   15. FOOTER
+========================================== */
+
+.shell footer {
+    text-align: center;
+    color: #929cad;
+    font-size: 11px;
+    padding: 25px;
+}
+
+
+/* ==========================================
+   16. LOGIN AND REGISTRATION PAGE
+========================================== */
+
+.auth {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: linear-gradient(
+        135deg,
+        #e8ebff,
+        #f5f7fb,
+        #e6f2f2
+    );
+}
+
+.authbox {
+    width: min(100%, 410px);
+    padding: 32px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px #14203318;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.authbox .logo {
+    color: #25344c;
+    margin-bottom: 15px;
+}
+
+.authbox h1 {
+    font: 800 26px Manrope;
+    margin: 0;
+}
+
+.authbox .muted {
+    margin: 0 0 8px;
+}
+
+.switch {
+    text-align: center;
+    font-size: 12px;
+    color: #8490a0;
+    margin: 5px;
+}
+
+
+/* ==========================================
+   17. ERROR AND SUCCESS MESSAGES
+========================================== */
+
+.error {
+    background: #fff0f1;
+    color: #b73f50;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.success {
+    color: #168158;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   18. LOADING AND CENTER ALIGNMENT
+========================================== */
+
+.center {
+    text-align: center;
+    padding: 20vh;
+}
+
+
+/* ==========================================
+   19. IMAGE UPLOAD RELATED STYLES
+   Retained from the original CSS
+========================================== */
+
+.drop {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px dashed #aeb9cc;
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    font-size: 13px;
+    color: #5e6b80;
+}
+
+.preview {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.preview img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    align-self: flex-start;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(170px, 1fr)
+    );
+    gap: 14px;
+}
+
+.gallery figure {
+    margin: 0;
+    background: white;
+    border: 1px solid #e7ebf2;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.gallery figcaption {
+    padding: 9px;
+    font-size: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   20. RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 650px) {
+
+    .shell header {
+        padding: 12px 16px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .shell header nav {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    .intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stat {
+        width: 100%;
+    }
+
+    .taskform {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        grid-column: auto;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+    }
+
+    .filters input {
+        flex-basis: 100%;
+    }
+
+    .filters select {
+        flex: 1;
+        width: auto;
+    }
+
+    .task {
+        flex-wrap: wrap;
+    }
+
+    .tasktext {
+        min-width: 60%;
+    }
+}
+
